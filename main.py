@@ -19,6 +19,7 @@ search_tool = DuckDuckGoSearchRun()
 
 os.environ["OPENAI_API_KEY"] = config("OPENAI_API_KEY")
 os.environ["OPENAI_ORGANIZATION"] = config("OPENAI_ORGANIZATION_ID")
+serper_api_key = os.getenv("SERPER_API_KEY")
 
 
 # This is the main class that you will use to define your custom crew.
@@ -31,7 +32,7 @@ class TripCrew:
         self.cities = cities
         self.date_range = date_range
         self.interests = interests
-        print(os.environ("SERPER_API_KEY"))
+        
 
     def run(self):
         # Define your custom agents and tasks in agents.py and tasks.py
