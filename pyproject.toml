@@ -1,0 +1,35 @@
+# If there is a specific python version you want to use, you can run this before running poetry install --no-root
+# poetry env use C:\\python-3.10.6-embed-amd64\\python.exe
+
+# poetry install --no-root
+#If ExecutionPolicy is Restricted then "Set-ExecutionPolicy Unrestricted -Scope CurrentUser"
+
+[tool.poetry]
+name = "trip_planner_from_scratch"
+version = "0.1.0"
+description = "Simple AI trip planner"
+authors = ["Pri <digitally.inspires@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"
+crewai = "0.1.24"
+unstructured = "==0.10.25"
+python-dotenv = "1.0.0"
+langchain-openai = "^0.0.5"
+duckduckgo-search = "^5.1.0"
+python-decouple = "^3.8"
+
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
